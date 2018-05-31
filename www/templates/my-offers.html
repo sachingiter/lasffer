@@ -1,0 +1,34 @@
+<ion-view view-title="AboutUs" hide-nav-bar="true">
+	<ion-header-bar class="bg-aquamarine" >
+      <button class="button button-icon button-clear ion-navicon text-white" menu-toggle="left">
+      </button>
+      <h1 class="title text-white left-0">My Offers</h1>
+      
+   </ion-header-bar>
+  <ion-content class="padding bg-content">
+  <p class="fs-12 text-grey mar-auto item-divider">12 MAR 2017</p>
+  	<div class="row" style="border-radius: 10px;border: 1px solid darkgrey;    margin: 14px 0px;" ng-repeat="Offer in MyOfferData track by $index">
+  		<div class="col col-33">
+          <img src="img/dominoz.png" ng-src="{{Offer._embedded['wp:featuredmedia']['0'].source_url}}" style="width: 100%;object-fit: contain;">                    
+      </div>
+      <div class="col">
+        <p class="fs-16">
+         {{Offer.slug}}
+       <!--  <b>20 % OFF</b> -->
+        </p>
+         <span class=" flex-center  mar-bot-10 no-border bg-aquamarine btn-show-more" ng-init="showMore=false" ng-click="showMore=!showMore" >
+            <span class="fsw8-bold">Show More</span>&nbsp;&nbsp;
+            <i class="icon ion-ios-arrow-forward text-white"></i>
+       </span>
+
+
+       <p class="fs-10" ng-show="showMore" style=" line-height: 12px;" ng-bind-html="Offer.content.rendered"></p>
+      
+      </div>
+  		 
+      
+  	</div>
+   
+  </ion-content>
+</ion-view>
+

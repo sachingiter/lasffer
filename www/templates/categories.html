@@ -1,14 +1,27 @@
-<ion-view title="Categories">
+<ion-view >
     <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <button menu-toggle="left" class="button button-icon icon ion-navicon text-white"></button>
     </ion-nav-buttons>
+    <ion-nav-title class="text-white">Location</ion-nav-title>
     <ion-nav-buttons side="right">
-        <a class="button button-clear" href="#/app/basket"><i class="icon ion-ios-cart"><span class="badge badge-dark">{{cartItems}}</span></i></a>
+        <button class="button  ion-ios-cart bg-none no-border text-white  fs-24 posi-rel" href="#/app/basket" >
+          <p class="notifi-count">{{cartItems}}</p>
+        </button> 
     </ion-nav-buttons>
-    <ion-content class="has-header">
+    <ion-content class="has-header bg-loaction padding">
 
-        <div class='row' ng-repeat="row in categories | partition:1">
-            <div class="card col item" ng-repeat="category in row">
+        <!-- <a class="item  item-icon-right padding bg-b-li no-border" ui-sref="app.store-location">
+            Automatically Detect my Location
+            <i class="icon ion-pinpoint fs-16"></i>
+          </a>
+
+          <p class="text-center mar-auto padding">Or</p>
+         
+           <a class="padding bg-b-li wid-100 text-black item text-center no-border">Select Manually</a>
+           <br> -->
+
+        <div class='row bg-none' ng-repeat="row in categories | partition:1">
+            <div class=" col item bg-none no-border no-padding mar-bot1" ng-repeat="category in row" >
 
                 <!-- Parent -->
                 <div class='item item-divider'>
@@ -21,16 +34,24 @@
                 </div>
 
                 <!-- Sub-categories -->
-                <div ng-if="category.children.length > 0">
+                <div class="padding-top bg-none" ng-if="category.children.length > 0">
 
-                    <ul class="list">
+                    <!-- <ul class="list">
                         <li class="item" ng-repeat="c in category.children">
                             <a class="text-wrap category-title" href="#/app/categories/{{c.slug}}/{{c.name}}">
                                 <div easypiechart class="chart" options="options" percent="getPercentageValue(c.count, category.count)"></div>
                                 <h2 class="text-center">{{c.name}} - <b>{{c.count}}</b></h2>
                             </a>
                         </li>
-                    </ul>
+                    </ul> -->
+
+                   
+
+                   <a class="padding no-border bg-b-li wid-100 text-black item text-center bg-white mar-auto bor-ra mar-bot1" ng-repeat="c in category.children" href="#/app/categories/{{c.slug}}/{{c.name}}">
+                         <h2 class="text-center">{{c.name}} - <b>{{c.count}}</b></h2>
+                   </a>
+
+                 
 
                 </div>
             </div>

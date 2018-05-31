@@ -93,6 +93,56 @@ angular.module('woocommerce-api', ['ionic', 'woocommerce-api.controllers',
         }
     })
 
+    .state('app.contactus', {
+        url: "/contactus",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/contactus.html"
+                // controller: 'HomeCtrl'
+            }
+        }
+    })
+
+    .state('app.my-offers', {
+        url: "/my-offers",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/my-offers.html",
+                controller: 'MyOfferCtrl'
+            }
+        }
+    })
+
+     .state('app.store-location', {
+        url: "/store-location",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/store-location.html"
+                // controller: 'HomeCtrl'
+            }
+        }
+    })
+
+    .state('app.order-confirmed', {
+        url: "/order-confirmed",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/order-confirmed.html"
+                // controller: 'HomeCtrl'
+            }
+        }
+    })
+
+    .state('app.location', {
+        url: "/location",
+        views: {
+            'menuContent': {
+                templateUrl: "templates/location.html"
+                // controller: 'HomeCtrl'
+            }
+        }
+    })
+
     .state('app.products', {
         url: "/products",
         views: {
@@ -193,5 +243,5 @@ angular.module('woocommerce-api', ['ionic', 'woocommerce-api.controllers',
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/home');
+    $urlRouterProvider.otherwise('/app/categories');
 });

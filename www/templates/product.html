@@ -1,23 +1,27 @@
 <ion-view view-title='Product'>
-    <ion-nav-title>{{product.title}}</ion-nav-title>
-    <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-    <ion-nav-back-button class="button-clear"><i class="icon ion-ios-arrow-back"></i></i> Back</ion-nav-back-button>
+    <ion-nav-title class="text-white">{{product.title}}</ion-nav-title>
+    <ion-nav-bar class="bar-stable nav-title-slide-ios7 bg-aquamarine">
+    <ion-nav-back-button class="button-clear text-white"><i class="icon ion-ios-arrow-back text-white"></i></i> Back</ion-nav-back-button>
     </ion-nav-bar>
     <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <button menu-toggle="left" class="button button-icon icon ion-navicon text-white"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
         <div class="buttons">
-            <button ui-sref="app.basket" class="button no-animation button-icon icon" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><i class="icon ion-ios-cart"><span class="badge badge-dark">{{cartItems}}</span></i>
-            </button>
+           <!--  <button ui-sref="app.basket" class="button no-animation button-icon icon text-white" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"><i class="icon ion-ios-cart"><span class="badge badge-dark">{{cartItems}}</span></i>
+            </button> -->
 
-            <button ng-click="shareProduct()" class="button no-animation button-icon icon ion-share" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+        <button class="button  ion-ios-cart bg-none no-border text-white  fs-24 posi-rel" ui-sref="app.basket" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);" >
+          <p class="notifi-count">{{cartItems}}</p>
+        </button> 
+
+            <button ng-click="shareProduct()" class="button no-animation button-icon icon ion-share text-white" style="-webkit-user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
             </button>
         </div>
     </ion-nav-buttons>
     
 
-    <ion-content class="has-header">
+    <ion-content class="has-header bg-content">
         <div class="list card">
             <div class="item item-divider">
                 <ion-slide-box on-slide-changed="slideHasChanged($index)" auto-play="true" does-continue="true">
@@ -40,7 +44,7 @@
                 <div ng-bind-html="product.description"></div>
                 <div class='row'>
                     <div class="col text-left">
-                        <button class="button button-small button-positive" ng-click="openLink(product.permalink)">Product page</button>
+                        <button class="button button-small bg-aquamarine text-white" ng-click="openLink(product.permalink)">Product page</button>
                     </div>
                     <div class="col text-right" style='vertical-align: middle; margin-top: 4px'>
                         <wc-rating rating='product.average_rating' />
@@ -76,11 +80,11 @@
             <div class="item item-divider ">
                 <div class='row'>
                     <div class="col text-left">
-                        <button class='button button-positive' ng-click="toBasket()" ng-if="product" ng-disabled="!product.in_stock || (product.stock_quantity && (product.stock_quantity < quantity.value)) || !quantityForm.quantity.$valid">
+                        <button class='button bg-aquamarine text-white' ng-click="toBasket()" ng-if="product" ng-disabled="!product.in_stock || (product.stock_quantity && (product.stock_quantity < quantity.value)) || !quantityForm.quantity.$valid">
                             <i class="icon ion-ios-cart" style='margin-right: 4px'> </i> <span ng-if="product.in_stock && quantityForm.quantity.$valid">Add To Cart</span><span ng-if="!product.in_stock">Out of stock</span><span ng-if="!quantityForm.quantity.$valid">Invalid Quantity</span>
                         </button>
                     </div>
-                    <div class="col text-right">
+                    <div class="col text-right text-reddd">
                         <div style='vertical-align: middle; margin-top: 16px; margin-right: 8px'>
                             <i class="icon ion-pricetag"></i>
                             <span class='product-price' ng-bind-html="product.price_html"></span>

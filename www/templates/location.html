@@ -1,0 +1,31 @@
+<ion-view view-title="Browse" hide-nav-bar="true">
+<ion-header-bar class="bg-aquamarine" >
+      <button class="button button-icon button-clear ion-navicon text-white" menu-toggle="left">
+      </button>
+      <h1 class="title text-white left-0">Your Location</h1>
+      <div class="header-icon-right">
+        <button class="button  ion-ios-search text-white bg-none no-border fs-24 " ></button>
+        <button class="button  ion-ios-cart text-white bg-none no-border   fs-24 posi-rel" ui-sref="app.basket" >
+          <p class="notifi-count">1</p>
+        </button> 
+      </div>
+   </ion-header-bar>
+  <ion-content class="padding bg-content">
+
+  <a class="item  item-icon-right padding bg-b-li" ui-sref="app.store-location">
+    Automatically Detect my Location
+    <i class="icon ion-pinpoint fs-16"></i>
+  </a>
+
+  <p class="text-center mar-auto padding">Or</p>
+ 
+   <a class="padding bg-b-li wid-100 text-black item text-center">Select Manually</a>
+   <br>
+
+   <a class="padding bg-b-li wid-100 text-black item text-center bg-white card mar-auto bor-ra mar-bot1" ng-repeat="i in [1,1,1,1] track by $index">
+   		Atteciated
+   </a>
+
+  </ion-content>
+</ion-view>
+ 

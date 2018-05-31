@@ -1,22 +1,84 @@
 <ion-side-menus>
 
-    <ion-pane ion-side-menu-content>
-        <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-            <ion-nav-back-button class="button-clear"><i class="icon ion-ios-arrow-back"></i></i> Back</ion-nav-back-button>
+    <ion-pane ion-side-menu-content drag-content="false">
+        <ion-nav-bar class="bar-stable nav-title-slide-ios7 bg-aquamarine text-white">
+            <ion-nav-back-button class="button-clear text-white">
+              <i class="icon ion-ios-arrow-back text-white"></i>Back
+            </ion-nav-back-button>
         </ion-nav-bar>
         <ion-nav-view name="menuContent" animation="slide-left-right"></ion-nav-view>
     </ion-pane>
 
     <ion-side-menu side="left">
-        <header class="bar bar-header bar-stable">
+        <!-- <header class="bar bar-header bar-stable">
             <h1 class="title">Menu</h1>
-        </header>
-        <ion-content class="has-header">
+        </header> -->
+        <!-- <ion-content class="has-header">
             <ion-list>
                 <ion-item ng-repeat="item in items" nav-clear menu-close href="{{item.url}}">
                     <i class="icon {{item.icon}}"></i> {{item.title}}
                 </ion-item>
             </ion-list>
-        </ion-content>
+        </ion-content> -->
+
+        <ion-content class="bg-content">
+    <div class=" wid-100 bg-covers menu-header" ui-sref="profile">
+           <div class="row bg-menu-profile" >
+              <div class="col col-80 text-alignment">
+                <h4 class="text-grey">John Smith</h4>
+              </div>
+              <div class="col col-20 flex-center">
+                <img src="img/menu/edit-profile.png" class="profile-edit-image">
+              </div>
+           </div>
+    </div>
+      <div class="list mar-auto">
+        <a class="item item-avatar text-alignment menu-title" ui-sref="app.products" menu-close>
+                  <img src="img/menu/home.png" class="icon-home">
+                  <p class="text-black"><b>Home</b></p>
+          </a>
+          <a class="item item-avatar text-alignment menu-title" menu-close ui-sref="app.basket">
+                  <img src="img/menu/my-order.png" class="icon-home">
+                  <p class="text-black"><b>My Order</b></p>
+          </a>
+          <a class="item item-avatar text-alignment menu-title" ui-sref="app.about" menu-close>
+                  <img src="img/menu/about.png" class="icon-home">
+                  <p class="text-black"><b>About Us</b></p>
+          </a>
+          <a class="item item-avatar text-alignment menu-title" ui-sref="app.contactus" menu-close>
+                  <img src="img/menu/contact.png" class="icon-home">
+                  <p class="text-black"><b>Contact Us</b></p>
+          </a>
+          <a class="item item-avatar text-alignment menu-title" menu-close ng-click="shareProduct()" >
+                  <img src="img/menu/myoffer.png" class="icon-home">
+                  <p class="text-black"><b>Share with friends</b></p>
+          </a>
+          <a class="item item-avatar text-alignment menu-title" ui-sref="app.my-offers" menu-close >
+                  <img src="img/menu/share.png" class="icon-home">
+                  <p class="text-black"><b>My Offers</b></p>
+          </a>
+          <a class="item item-avatar text-alignment menu-title" menu-close ui-sref="welcome" >
+                  <img src="img/menu/logout.png" class="icon-home">
+                  <p class="text-black"><b>Signout</b></p>
+          </a>
+      </div>
+      <div class="padding">
+        <p class="fs-12  mar-auto" style="    padding-left: 4px !important;"><b>FOLLOW US ON</b></p>
+        <div class="row no-padding">
+          <div class="col col-20">
+              <img src="img/menu/facebook.png" class="wid-100 " href="www.facebook.com">
+          </div>
+          <div class="col col-20" href="https://www.instagram.com">
+              <img src="img/menu/instagram.png" class="wid-100" >
+          </div>
+          <div class="col col-20" href="https://www.youtube.com">
+              <img src="img/menu/youtube.png" class="wid-100" >
+          </div>
+          <div class="col">
+            
+          </div>
+        </div>
+      </div>
+    </ion-content>
     </ion-side-menu>
 </ion-side-menus>

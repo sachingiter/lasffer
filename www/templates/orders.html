@@ -1,11 +1,44 @@
-<ion-view title="Orders">
+<ion-view>
     <ion-nav-buttons side="left">
-        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+        <button menu-toggle="left" class="button button-icon icon ion-navicon text-white"></button>
     </ion-nav-buttons>
+     <ion-nav-title class="text-white">Order History</ion-nav-title>
     <ion-nav-buttons side="right">
-        <a class="button button-clear" href="#/app/basket"><i class="icon ion-ios-cart"><span class="badge badge-dark">{{cartItems}}</span></i></a>
+        <button class="button ion-ios-cart bg-none no-border text-white fs-24 posi-rel" ui-sref="app.basket" >
+          <p class="notifi-count">{{cartItems}}</p>
+        </button> 
     </ion-nav-buttons>
     <ion-content class="has-header">
+    <div class=" wid-100 pad-4">
+         <div class="row" ui-sref="profile-edit">
+            <div class="col col-80 text-align">
+              <h4 class="mar-auto">John Smith</h4>
+              <p class="fs-12 mar-auto">johnsmith@gmail.com</p>
+            </div>
+            <div class="col col-20 flex-center">
+              <img src="img/edit-profile.png" class="profile-edit-image">
+            </div>
+        </div>
+    </div>
+
+     <div class=" item item-divider bg-red-light">
+
+    </div>
+
+    <div class="row card-history bg-white" >
+            <div class="col col-20">
+              <img src="img/thumb.jpg" class="wid-100">
+            </div>
+            <div class="col text-alignment">
+                 <div>
+                    <h6 class="mar-auto">KFC</h6>
+                    <p class="fs-10 mar-auto text=grey">Order Num: 2</p>
+                </div>
+            </div>
+            <div class="col col-10 flex-center">
+               <i class="icon ion-ios-arrow-forward text-red fs-24 " ></i>
+            </div>
+    </div>
 
 	<div ng-repeat="order in orders.orders" class="list card">
 

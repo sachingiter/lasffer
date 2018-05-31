@@ -7,6 +7,8 @@ angular.module('woocommerce-api.controllers', [])
 
     $scope.items = MenuData.items;
 
+    console.log("item", $scope.items)
+
     var cartItems = BasketData.getBasket();
     $scope.cartItems = cartItems.length;
 
@@ -14,6 +16,17 @@ angular.module('woocommerce-api.controllers', [])
         cartItems = BasketData.getBasket();
         $scope.cartItems = cartItems.length;
     });
+
+    $scope.shareProduct = function() {
+
+        var subject = "title";
+        var message = "hello";
+       
+
+        //Documentation: https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin
+        //window.plugins.socialsharing.share('Message', 'Subject', 'Image', 'Link');
+        window.plugins.socialsharing.share(message, subject, null);
+    }
 
 })
 
@@ -80,6 +93,22 @@ angular.module('woocommerce-api.controllers', [])
         //if (toState['name'] === 'app.products' && $scope.products.length == 0)
         //$scope.loadMoreProducts();
     });
+
+})
+
+
+.controller('MyOfferCtrl', function($rootScope, $scope, DealsData) {
+
+    console.log(DealsData);
+     DealsData.getMyoffer().then(function(data){
+        $scope.MyOfferData = data.data
+        console.log($scope.MyOfferData)
+
+     })
+            
+
+
+    
 
 })
 

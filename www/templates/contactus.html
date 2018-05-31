@@ -1,0 +1,46 @@
+<ion-view hide-nav-bar="true" class="">
+       <ion-header-bar class="bg-aquamarine"> 
+          <button class="button button-icon button-clear ion-navicon text-white" menu-toggle="left">
+      </button>
+          <div class="h1 title text-white text-left text-alignment" ui-sref="app.home">Contact Us</div>
+         <!--  <button  class="button button-icon text-white icon ion-android-more-vertical fs-10" ng-click="ShowDropDown.showPopover($event)"></button> -->
+      </ion-header-bar>
+
+    <ion-content class=" padding bg-content" scroll="true">
+
+        <div class="hi-100 padding-top ">
+          
+                <div class="wid-100">
+                    <div class="row no-padding ">
+                        <div class="col">
+                            <div class="list">
+                                <label class="item item-input input-txt input-fi input-in signup-bot bg-none">
+                                    <input type="text" placeholder="Name " name="UserName" class="fs-16 no-padding" ng-model="newuserobj.firstName">
+                                </label>
+                                <label class="item item-input input-txt input-fi input-in signup-bot bg-none">
+                                    <input type="text" placeholder="Phone" name="UserName" class="fs-16 no-padding " ng-model="newuserobj.lastName">
+                                </label>
+
+                                 <label class="item item-input input-txt input-fi input-in signup-bot bg-none">
+                                    <input type="text" placeholder="Email" name="UserName" class="fs-16 no-padding " ng-model="newuserobj.email">
+                                </label>
+
+                                <label class="item item-input input-txt input-fi input-in signup-bot bg-none">
+                                    <textarea  placeholder="Message" name="UserName" class="fs-16 no-padding bg-none" style="height: 150px;"> 
+                                    </textarea>
+                                </label>
+                                <br><br>
+                                
+                                 <button class="button button-large btn-type mar-bot-10 no-border bg-aquamarine" ng-click="NewUser(newuserobj)">
+                                   <span class="fsw8-bold fs-18">CONTACT US</span>
+                                </button>
+                            </div>
+                        </div>
+                
+                </div>
+            </div>
+
+        </div>
+    </ion-content>
+   
+</ion-view>

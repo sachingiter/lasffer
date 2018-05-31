@@ -4,12 +4,15 @@
         <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
     </ion-nav-buttons>
     <ion-nav-buttons side="right">
-        <a class="button button-clear" href="#/app/basket"><i class="icon ion-ios-cart"><span class="badge badge-dark">{{cartItems}}</span></i></a>
+        <!-- <a class="button button-clear" href="#/app/basket"><i class="icon ion-ios-cart"><span class="badge badge-dark">{{cartItems}}</span></i></a> -->
+        <button class="button  ion-ios-cart bg-none no-border text-white  fs-24 posi-rel" ui-sref="app.basket" >
+          <p class="notifi-count">{{cartItems}}</p>
+        </button> 
     </ion-nav-buttons>
-    <ion-content class="has-header">
+    <ion-content class="has-header bg-content">
         <div class="row" ng-repeat="row in products | partition:3">
             <div class="card col" ng-repeat="product in row">
-                <div class="card-content">
+                <div class="card-content bg-white">
 
                     <div class="card-bg-image"></div>
                     <a class="product-title  text-center" ng-href="#/app/products/{{product.id}}">
@@ -23,7 +26,7 @@
                         
                     </a>
 
-                    <div ng-if="product.price_html" class="text-right product-price">
+                    <div ng-if="product.price_html" class="text-right product-price text-reddd">
                         <i class="icon ion-pricetag"></i>
                         <span class="" ng-bind-html="product.price_html"></span>
                     </div>

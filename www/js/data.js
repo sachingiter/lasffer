@@ -145,6 +145,18 @@ angular.module('woocommerce-api.data', [])
 
     };
 
+
+    service.getMyoffer = function() {
+       
+
+          return  $http({
+                method: 'GET',
+                url: "http://techmatrick.com/jetphast/wp-json/wp/v2/posts?categories=33&_embed"
+                
+            })
+      
+    };
+
     service.getAll = function() {
         return data;
     };
